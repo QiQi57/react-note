@@ -1,16 +1,16 @@
 ### react diff 算法 要点：
 # 虚拟dom树比较 基于三个策略：
-1.dom节点跨层级移动比较少，只对同层的节点进行比较
-2.类型相同的节点（组件）总会生成类似的树形结构
-3.同一层级子元素根据key比较
+1. dom节点跨层级移动比较少，只对同层的节点进行比较
+2. 类型相同的节点（组件）总会生成类似的树形结构
+3. 同一层级子元素根据key比较
 
 # Tree Diff：
 两棵树只会对同一层次的节点进行比较。
 
 # component diff (组件间比较)：
-1.如果是同类型的组件，则按照策略比较virtual dom 树
-2.如果不是同类型组件，unmount 组件
-3.shouldComponentUpdate 控制是否需要比较组件
+1. 如果是同类型的组件，则按照策略比较virtual dom 树
+2. 如果不是同类型组件，unmount 组件
+3. shouldComponentUpdate 控制是否需要比较组件
 
 # element diff (元素间的比较)：
 当节点处于同一层时，react diff 提供了三种节点操作，INSERT_MARKUP（插入）、MOVE_EXISTING（移动）和 REMOVE_NODE（删除）。
